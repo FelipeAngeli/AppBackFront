@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol LoginScreenProtocol: AnyObject {
+    func tappedLoginButton()
+}
+
 class LoginScreem: UIView {
+    
+    private weak var delegate: LoginScreenProtocol?
+    
+    public func delegate(delegate: LoginScreenProtocol?) {
+        self.delegate = delegate
+    }
     
     lazy var subImageView: UIImageView = {
        let image = UIImageView()
@@ -112,7 +122,7 @@ class LoginScreem: UIView {
     }()
     
     @objc func tappedLoginButton(_ sender: UIButton){
-        print(#function)
+        self.delegate?.tappedLoginButton()
     }
     
     lazy var lineView: UIView = {
