@@ -12,9 +12,11 @@ class LoginVC: UIViewController {
     
     var loginScreen: LoginScreem?
     var auth: Auth?
+    var alert: AlertController?
     
     override func loadView() {
         loginScreen = LoginScreem()
+        alert = AlertController(controller: self)
         view =  loginScreen
     }
 
@@ -61,6 +63,7 @@ extension LoginVC: LoginScreenProtocol {
             if error != nil {
                 //deu ruim
                 print(error?.localizedDescription ?? "")
+                self.alert?.getAlert(title: "Falha no Login", message: error?.localizedDescription ?? "", completion: { print("botao presionado") })
             } else {
                 //nao tem error
                 print("Sucesso!")
