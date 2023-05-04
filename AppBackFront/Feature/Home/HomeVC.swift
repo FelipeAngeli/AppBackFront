@@ -8,14 +8,24 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
-        // Do any additional setup after loading the view.
+    
+    var screen: HomeScreen?
+    
+    
+    override func loadView() {
+        screen = HomeScreen()
+        view = screen
     }
     
-
-   
-
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    
+    
+    
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeScreen: UIView {
-
+    
     
     lazy var viewBackGound: UIView = {
         let view = UIView()
@@ -17,15 +17,15 @@ class HomeScreen: UIView {
         return view
     }()
     
-    lazy var LogoImageView: UIImageView = {
+    lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "vector")
+        imageView.image = UIImage(named: "Vector")
         return imageView
     }()
     
     lazy var searchBar: UISearchBar = {
-       let serachBar = UISearchBar()
+        let serachBar = UISearchBar()
         serachBar.translatesAutoresizingMaskIntoConstraints = false
         serachBar.clipsToBounds = true
         serachBar.layer.cornerRadius = 20
@@ -34,7 +34,7 @@ class HomeScreen: UIView {
     }()
     
     lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView()
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout.init())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1.0)
@@ -55,16 +55,31 @@ class HomeScreen: UIView {
         return tableView
     }()
     
+    func configTableViewProtocols(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
+    }
+    
+    func configTableViewProtocols(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource){
+        collectionView.delegate = delegate
+        collectionView.dataSource = dataSource
+    }
+    
+    func configSearchbarDelegate(delegate: UISearchBarDelegate){
+        searchBar.delegate = delegate
+    }
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1.0)
         addViews()
+        configConstraints()
     }
     
     func addViews() {
         addSubview(viewBackGound)
-        viewBackGound.addSubview(LogoImageView)
+        viewBackGound.addSubview(logoImageView)
         viewBackGound.addSubview(searchBar)
         viewBackGound.addSubview(collectionView)
         addSubview(tableView)
@@ -74,4 +89,33 @@ class HomeScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configConstraints() {
+        NSLayoutConstraint.activate([
+            viewBackGound.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            viewBackGound.leadingAnchor.constraint(equalTo: leadingAnchor),
+            viewBackGound.trailingAnchor.constraint(equalTo: trailingAnchor),
+            viewBackGound.heightAnchor.constraint(equalToConstant: 200),
+            
+            logoImageView.topAnchor.constraint(equalTo: viewBackGound.topAnchor, constant: 5),
+            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            logoImageView.heightAnchor.constraint(equalToConstant: 40),
+            logoImageView.widthAnchor.constraint(equalToConstant: 40),
+            
+            searchBar.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10),
+            searchBar.leadingAnchor.constraint(equalTo: logoImageView.leadingAnchor),
+            searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            searchBar.heightAnchor.constraint(equalToConstant: 46),
+            
+            collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: viewBackGound.bottomAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: viewBackGound.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+        ])
+    }
 }
