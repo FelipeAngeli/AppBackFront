@@ -23,6 +23,12 @@
 		558C357429AE79AE00FE4009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558C357229AE79AE00FE4009 /* LaunchScreen.storyboard */; };
 		558C357F29AE7AD800FE4009 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C357E29AE7AD800FE4009 /* LoginVC.swift */; };
 		558C358129AE837B00FE4009 /* LoginScreem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C358029AE837B00FE4009 /* LoginScreem.swift */; };
+		93840AF12A426DEC00B98EF9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93840AF02A426DEC00B98EF9 /* HomeViewModel.swift */; };
+		93840AF52A426E7200B98EF9 /* HomeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93840AF42A426E7200B98EF9 /* HomeServices.swift */; };
+		93840AF72A42782700B98EF9 /* GenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93840AF62A42782700B98EF9 /* GenericService.swift */; };
+		93840AFB2A427BAF00B98EF9 /* HomeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 93840AF92A427BAE00B98EF9 /* HomeData.json */; };
+		93840AFC2A427BAF00B98EF9 /* WalletData.json in Resources */ = {isa = PBXBuildFile; fileRef = 93840AFA2A427BAE00B98EF9 /* WalletData.json */; };
+		93840B002A427D5400B98EF9 /* NFTData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93840AFF2A427D5400B98EF9 /* NFTData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +51,12 @@
 		558C358029AE837B00FE4009 /* LoginScreem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreem.swift; sourceTree = "<group>"; };
 		71397901F421A0194D44A93D /* Pods_AppBackFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppBackFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		875D5363055D57044B9A9401 /* Pods-AppBackFront.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBackFront.debug.xcconfig"; path = "Target Support Files/Pods-AppBackFront/Pods-AppBackFront.debug.xcconfig"; sourceTree = "<group>"; };
+		93840AF02A426DEC00B98EF9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		93840AF42A426E7200B98EF9 /* HomeServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServices.swift; sourceTree = "<group>"; };
+		93840AF62A42782700B98EF9 /* GenericService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericService.swift; sourceTree = "<group>"; };
+		93840AF92A427BAE00B98EF9 /* HomeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HomeData.json; sourceTree = "<group>"; };
+		93840AFA2A427BAE00B98EF9 /* WalletData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WalletData.json; sourceTree = "<group>"; };
+		93840AFF2A427D5400B98EF9 /* NFTData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,7 @@
 		552AAF6129F99714000673ED /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				93840AEF2A426DBA00B98EF9 /* ViewModel */,
 				552AAF6429F99A86000673ED /* Screen */,
 				552AAF6229F9976D000673ED /* HomeVC.swift */,
 			);
@@ -141,6 +154,9 @@
 		558C356629AE79AC00FE4009 /* AppBackFront */ = {
 			isa = PBXGroup;
 			children = (
+				93840AFD2A427D1D00B98EF9 /* Model */,
+				93840AF82A427AC000B98EF9 /* Json */,
+				93840AF22A426E4400B98EF9 /* Services */,
 				552AAF6029F996D2000673ED /* Feature */,
 				552AAF5B29F995A9000673ED /* TabBarController */,
 				552AAF5829F98EC3000673ED /* Alert */,
@@ -188,6 +204,48 @@
 				11AC88CA232A4C9DA4A07963 /* Pods-AppBackFront.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		93840AEF2A426DBA00B98EF9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				93840AF02A426DEC00B98EF9 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		93840AF22A426E4400B98EF9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				93840AF32A426E5600B98EF9 /* HomeServices */,
+				93840AF62A42782700B98EF9 /* GenericService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		93840AF32A426E5600B98EF9 /* HomeServices */ = {
+			isa = PBXGroup;
+			children = (
+				93840AF42A426E7200B98EF9 /* HomeServices.swift */,
+			);
+			path = HomeServices;
+			sourceTree = "<group>";
+		};
+		93840AF82A427AC000B98EF9 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				93840AF92A427BAE00B98EF9 /* HomeData.json */,
+				93840AFA2A427BAE00B98EF9 /* WalletData.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		93840AFD2A427D1D00B98EF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93840AFF2A427D5400B98EF9 /* NFTData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B4E340E9B6976987DA7BC9F7 /* Frameworks */ = {
@@ -265,6 +323,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93840AFB2A427BAF00B98EF9 /* HomeData.json in Resources */,
+				93840AFC2A427BAF00B98EF9 /* WalletData.json in Resources */,
 				558C357429AE79AE00FE4009 /* LaunchScreen.storyboard in Resources */,
 				558C357129AE79AE00FE4009 /* Assets.xcassets in Resources */,
 				557B2EA529F0BE6400190D3E /* GoogleService-Info.plist in Resources */,
@@ -321,12 +381,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				558C358129AE837B00FE4009 /* LoginScreem.swift in Sources */,
+				93840AF12A426DEC00B98EF9 /* HomeViewModel.swift in Sources */,
 				558C356829AE79AC00FE4009 /* AppDelegate.swift in Sources */,
 				558C357F29AE7AD800FE4009 /* LoginVC.swift in Sources */,
 				552AAF6329F9976D000673ED /* HomeVC.swift in Sources */,
 				554CF8A329F575B10011D88E /* UIViewController+Extension.swift in Sources */,
+				93840AF72A42782700B98EF9 /* GenericService.swift in Sources */,
+				93840AF52A426E7200B98EF9 /* HomeServices.swift in Sources */,
 				552AAF5A29F98EE9000673ED /* AlertController.swift in Sources */,
 				552AAF6629F99B71000673ED /* HomeScreen.swift in Sources */,
+				93840B002A427D5400B98EF9 /* NFTData.swift in Sources */,
 				557D800B29F58078007FCB97 /* String+Extension.swift in Sources */,
 				552AAF5F29F99626000673ED /* TabBarVC.swift in Sources */,
 				558C356A29AE79AC00FE4009 /* SceneDelegate.swift in Sources */,

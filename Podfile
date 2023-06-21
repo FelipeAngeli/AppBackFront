@@ -7,5 +7,7 @@ target 'AppBackFront' do
 
   # Pods for AppBackFront
 pod 'SnapKit', '~> 5.6.0'
+pod 'Alamofire'
+pod 'AlamofireImage'
 
 end
