@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+
 
 protocol HomeViewModeldelegate: AnyObject {
     func success()
@@ -24,7 +26,7 @@ class HomeViewModel{
     }
     
     
-    public   func fetchRequest(_ typeFetch: TypeFetch) {
+    public func fetchRequest(_ typeFetch: TypeFetch) {
         switch typeFetch {
             
         case .mock:
@@ -55,6 +57,20 @@ class HomeViewModel{
             }
         }
        
+    }
+    
+    //MARK: - FIlterCollectionView
+    
+    public   var numberofItemsInSection: Int {
+        return nftData?.filterListNft?.count ?? 0
+    }
+    
+    public  func loadCurrentFilterNft(indexPath: IndexPath) -> FilterNft {
+        return nftData?.filterListNft?[indexPath.row] ?? FilterNft()
+    }
+    
+    public  var sizeForItemAt: CGSize {
+        return CGSize(width: 100, height: 34)
     }
 
 }

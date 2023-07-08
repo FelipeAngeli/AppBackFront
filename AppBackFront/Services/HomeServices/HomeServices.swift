@@ -21,22 +21,21 @@ class HomeService: HomeServicesDelegate {
         
         
         AF.request(url, method: .get).validate(statusCode: 200...299).responseDecodable(of: NFTData.self) { response in
-            debugPrint(response)
-            
-            switch response.result {
-            case .success(let success):
-                print("SUCCESS -> \(#function)")
-                completion(success, nil)
-            case .failure(let error):
-                print("ERROR -> \(#function)")
-                completion(nil, Error.errorRequest(error))
+                 debugPrint(response)
+                   switch response.result {
+                   case .success(let success):
+                       print("SUCCESS -> \(#function)")
+                       completion(success, nil)
+                   case .failure(let error):
+                       print("ERROR -> \(#function)")
+                       completion(nil, Error.errorRequest(error))
             }
         }
     }
     
     
     func getHomeFromJson(completion: @escaping completion<NFTData?>) {
-        if let url = Bundle.main.url(forResource: "HomeData", withExtension: "Json"){
+        if let url = Bundle.main.url(forResource: "HomeData", withExtension: "json"){
             do {
                 let data = try Data(contentsOf: url)
                 let nftData: NFTData = try JSONDecoder().decode(NFTData.self, from: data)

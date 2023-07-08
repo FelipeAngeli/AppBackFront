@@ -49,7 +49,7 @@ class HomeScreen: UIView {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        // TO DO: Register
+//        tableView.register(NftTableViewCell.self, forCellReuseIdentifier: NftTableViewCell.identifier)
         tableView.backgroundColor = UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1.0)
         tableView.separatorColor = .none
         return tableView
@@ -94,7 +94,7 @@ class HomeScreen: UIView {
             viewBackGound.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             viewBackGound.leadingAnchor.constraint(equalTo: leadingAnchor),
             viewBackGound.trailingAnchor.constraint(equalTo: trailingAnchor),
-            viewBackGound.heightAnchor.constraint(equalToConstant: 200),
+            viewBackGound.heightAnchor.constraint(equalToConstant: 160),
             
             logoImageView.topAnchor.constraint(equalTo: viewBackGound.topAnchor, constant: 5),
             logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
@@ -106,7 +106,7 @@ class HomeScreen: UIView {
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             searchBar.heightAnchor.constraint(equalToConstant: 46),
             
-            collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
+            collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 15),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: viewBackGound.bottomAnchor),

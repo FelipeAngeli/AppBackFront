@@ -20,6 +20,7 @@ class NftFilterCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addViews()
+        configConstraint()
     }
     
     
@@ -40,8 +41,6 @@ class NftFilterCollectionViewCell: UICollectionViewCell {
             screen.leadingAnchor.constraint(equalTo: leadingAnchor),
             screen.trailingAnchor.constraint(equalTo: trailingAnchor),
             screen.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            
         ])
     }
     
