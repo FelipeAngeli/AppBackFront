@@ -8,8 +8,15 @@
 import UIKit
 
 class NftDetailVC: UIViewController {
-
+    
+    
+    private var screen: NftDetailScreen?
     private let viewModel:NftDetailViewModel
+    
+    override func loadView() {
+        screen = NftDetailScreen()
+        view = screen
+    }
     
     required init(nft: Nft) {
         viewModel = NftDetailViewModel(nft: nft)
@@ -23,12 +30,27 @@ class NftDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        screen?.configTableViewProtocols(delegate: self, dataSource: self)
     }
     
 
-  
-   
+}
 
+
+extension NftDetailVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRowsInSection
+
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: NftImageTableViewCell.identifier, for: indexPath)
+        as? NftImageTableViewCell
+        cell?.setupCell(urlImgae: viewModel.nftImage)
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400
+    }
 }
