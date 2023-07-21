@@ -1,16 +1,15 @@
 //
-//  NftImageTableViewCell.swift
+//  NftDescriptionTableViewCell.swift
 //  AppBackFront
 //
-//  Created by Felipe Angeli on 17/07/23.
+//  Created by Felipe Angeli on 20/07/23.
 //
 
 import UIKit
-import AlamofireImage
 
-class NftImageTableViewCell: UITableViewCell {
+class NftDescriptionTableViewCell: UITableViewCell {
     
-    static let identifier: String = String(describing: NftImageTableViewCell.self)
+    static let identifier: String = String(describing: NftDescriptionTableViewCell.self)
 
     private lazy var screen: NftImageTableViewCellScreen = {
         let view = NftImageTableViewCellScreen()
@@ -43,11 +42,8 @@ class NftImageTableViewCell: UITableViewCell {
     }
     
     
-    public func setupCell(urlImgae: String,  delegate: NftImageTableViewCellScreenDelegate) {
-        if let url: URL = URL(string: urlImgae) {
-            screen.nftImageView.af.setImage(withURL: url)
-        }
-        screen.delegate(delegate: delegate)
+    public func setupCell() {
+        
     }
     
 
