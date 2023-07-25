@@ -1,11 +1,12 @@
 //
-//  String+Extension.swift
+//  String.swift
 //  AppBackFront
 //
-//  Created by Felipe  on 23/04/23.
+//  Created by Felipe Angeli on 04/12/22.
 //
 
 import Foundation
+import UIKit
 
 public enum ValidType {
     case email
@@ -24,11 +25,51 @@ extension String {
         var regex = ""
         
         switch validType {
-            case .email:
-                regex = Regex.email.rawValue
-            case .password:
-                regex = Regex.password.rawValue
+        case .email:
+            regex = Regex.email.rawValue
+        case .password:
+            regex = Regex.password.rawValue
         }
-        return NSPredicate(format: format, regex).evaluate(with: self)
+        return NSPredicate(format:format, regex).evaluate(with: self)
+    }
+    
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        
+        return ceil(boundingBox.height)
+    }
+    
+    func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        
+        return ceil(boundingBox.width)
+    }
+    
+    func getDateFormat(getFormatDate:String,setFormatDate:String)->String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = getFormatDate
+        
+        let setDateFormatter = DateFormatter()
+        setDateFormatter.dateFormat = setFormatDate
+        setDateFormatter.locale = NSLocale.init(localeIdentifier: "pt-br") as Locale
+        setDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        guard let date = dateFormatter.date(from: self) else {return ""}
+        let novaData = setDateFormatter.string(from: date)
+        
+        return novaData
+    }
+    
+    func getDate(getFormatDate:String)->Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = getFormatDate
+        dateFormatter.locale = NSLocale.init(localeIdentifier: "pt-br") as Locale
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        guard let date = dateFormatter.date(from: self) else {return Date()}
+        return date
     }
 }
+
+

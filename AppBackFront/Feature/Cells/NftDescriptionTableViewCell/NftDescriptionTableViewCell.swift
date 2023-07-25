@@ -11,8 +11,8 @@ class NftDescriptionTableViewCell: UITableViewCell {
     
     static let identifier: String = String(describing: NftDescriptionTableViewCell.self)
 
-    private lazy var screen: NftImageTableViewCellScreen = {
-        let view = NftImageTableViewCellScreen()
+    private lazy var screen: NftDescriptionTableViewCellScreen = {
+        let view = NftDescriptionTableViewCellScreen()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -42,8 +42,10 @@ class NftDescriptionTableViewCell: UITableViewCell {
     }
     
     
-    public func setupCell() {
-        
+    public func setupCell(id: Int, title: String, description: String) {
+        screen.idLabel.text = "#\(id)"
+        screen.titleLabel.text = title
+        screen.descriptionLabel.text = description
     }
     
 

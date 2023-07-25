@@ -2,15 +2,16 @@
 //  UIViewController+Extension.swift
 //  AppBackFront
 //
-//  Created by Felipe  on 23/04/23.
+//  Created by Felipe Angeli on 20/12/22.
 //
 
 import Foundation
 import UIKit
 
 extension UIViewController {
-    func dismissKeyBoard() {
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+    
+    func dismissKeyboard() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
