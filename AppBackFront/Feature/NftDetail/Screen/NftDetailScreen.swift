@@ -14,10 +14,12 @@ class NftDetailScreen: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(NftImageTableViewCell.self, forCellReuseIdentifier: NftImageTableViewCell.identifier)
         tableView.register(NftDescriptionTableViewCell.self, forCellReuseIdentifier: NftDescriptionTableViewCell.identifier)
+        tableView.register(LastestDealTableViewCell.self, forCellReuseIdentifier: LastestDealTableViewCell.identifier)
         tableView.backgroundColor = UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1)
         tableView.separatorStyle = .none
         return tableView
     }()
+    
     
     
     override init(frame: CGRect) {
