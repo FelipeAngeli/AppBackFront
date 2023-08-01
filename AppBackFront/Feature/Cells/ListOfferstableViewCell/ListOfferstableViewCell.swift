@@ -22,6 +22,7 @@ class ListOfferstableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = UIColor(red: 26/255, green: 26/255, blue: 26/255, alpha: 1)
         selectionStyle = .none
         addViews()
         configConstraint()
@@ -56,6 +57,13 @@ class ListOfferstableViewCell: UITableViewCell {
         screen.nameUserLabel.text = data.userName ?? ""
         screen.nftPriceLabel.text = "\(data.nftPrice ?? 0) ETH"
         screen.lastVizualizationLabel.text = data.lastAccess ?? ""
+        
+        if isInicial {
+            screen.roundCorners(cornerRadiuns: 20, typeCorners: [.topLeft, .topRight])
+        }
+        if isFinal{
+            screen.roundCorners(cornerRadiuns: 20, typeCorners: [.bottomLeft, .bottomRight])
+        }
 
     }
 
