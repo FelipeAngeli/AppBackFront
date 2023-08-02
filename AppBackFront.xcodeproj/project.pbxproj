@@ -44,6 +44,8 @@
 		93854F9D2A65F582007BDA4D /* NftImageTableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93854F9C2A65F582007BDA4D /* NftImageTableViewCellScreen.swift */; };
 		93A6123C2A5397EE00EF2BE9 /* NftFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A6123B2A5397EE00EF2BE9 /* NftFilterCollectionViewCell.swift */; };
 		93A6123F2A53985600EF2BE9 /* NftFilterCollectionViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A6123E2A53985600EF2BE9 /* NftFilterCollectionViewCellScreen.swift */; };
+		93B4473F2A7B1AF20082B032 /* MagnifyingGlassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4473E2A7B1AF20082B032 /* MagnifyingGlassVC.swift */; };
+		93B447422A7B1B290082B032 /* MagnifyingGlassScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B447412A7B1B290082B032 /* MagnifyingGlassScreen.swift */; };
 		93F786902A70951B00C99123 /* LastestDealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7868F2A70951B00C99123 /* LastestDealTableViewCell.swift */; };
 		93F786932A70957700C99123 /* LastestDealTableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F786922A70957700C99123 /* LastestDealTableViewCellScreen.swift */; };
 		93F786962A709BA700C99123 /* LastestDealTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F786952A709BA700C99123 /* LastestDealTableViewCellViewModel.swift */; };
@@ -90,6 +92,8 @@
 		93854F9C2A65F582007BDA4D /* NftImageTableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftImageTableViewCellScreen.swift; sourceTree = "<group>"; };
 		93A6123B2A5397EE00EF2BE9 /* NftFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftFilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		93A6123E2A53985600EF2BE9 /* NftFilterCollectionViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftFilterCollectionViewCellScreen.swift; sourceTree = "<group>"; };
+		93B4473E2A7B1AF20082B032 /* MagnifyingGlassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnifyingGlassVC.swift; sourceTree = "<group>"; };
+		93B447412A7B1B290082B032 /* MagnifyingGlassScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnifyingGlassScreen.swift; sourceTree = "<group>"; };
 		93F7868F2A70951B00C99123 /* LastestDealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastestDealTableViewCell.swift; sourceTree = "<group>"; };
 		93F786922A70957700C99123 /* LastestDealTableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastestDealTableViewCellScreen.swift; sourceTree = "<group>"; };
 		93F786952A709BA700C99123 /* LastestDealTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastestDealTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 		552AAF6029F996D2000673ED /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				93B4473D2A7B1ACC0082B032 /* MagnifyingGlass */,
 				9329044D2A60CA9500D1E640 /* NftDetail */,
 				93A612392A5397A100EF2BE9 /* Cells */,
 				552AAF6129F99714000673ED /* Home */,
@@ -412,6 +417,23 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
+		93B4473D2A7B1ACC0082B032 /* MagnifyingGlass */ = {
+			isa = PBXGroup;
+			children = (
+				93B447402A7B1B0C0082B032 /* Screen */,
+				93B4473E2A7B1AF20082B032 /* MagnifyingGlassVC.swift */,
+			);
+			path = MagnifyingGlass;
+			sourceTree = "<group>";
+		};
+		93B447402A7B1B0C0082B032 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				93B447412A7B1B290082B032 /* MagnifyingGlassScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		93F7868E2A7094C500C99123 /* LastestDealTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,8 +601,10 @@
 				552AAF6329F9976D000673ED /* HomeVC.swift in Sources */,
 				935BD2252A745DDE00FC9F21 /* ListOfferstableViewCell.swift in Sources */,
 				554CF8A329F575B10011D88E /* UIViewController+Extension.swift in Sources */,
+				93B447422A7B1B290082B032 /* MagnifyingGlassScreen.swift in Sources */,
 				93A6123C2A5397EE00EF2BE9 /* NftFilterCollectionViewCell.swift in Sources */,
 				9364E6B22A797EFE00FA39EE /* CACornerMask+Extension.swift .swift in Sources */,
+				93B4473F2A7B1AF20082B032 /* MagnifyingGlassVC.swift in Sources */,
 				934E27882A69FD2500336B59 /* NftDescriptionTableViewCellScreen.swift in Sources */,
 				93A6123F2A53985600EF2BE9 /* NftFilterCollectionViewCellScreen.swift in Sources */,
 				935BD2282A745E8C00FC9F21 /* ListOfferstableViewCellScreen.swift in Sources */,
