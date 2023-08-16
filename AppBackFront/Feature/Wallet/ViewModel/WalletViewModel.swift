@@ -58,8 +58,8 @@ class WalletViewModel {
         switch WalletNameCell(rawValue: indexPath.row) {
         case .quotationEth:
             return 250
-//        case .transactionList:
-//            return HeightLatestTransactions.height.rawValue * CGFloat(walletData?.latestTransactionsCell?.listOfTransactions?.count ?? 0) + 75
+        case .transactionList:
+            return HeightLatestTransactions.height.rawValue * CGFloat(walletData?.latestTransactionsCell?.listOfTransactions?.count ?? 0) + 75
         default:
             return 0
         }
