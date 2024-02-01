@@ -3,7 +3,7 @@
 
 ## 🚀 Sobre o Projeto
 
-    O BF NFT Marketplace App é uma solução inovadora e intuitiva para o comércio de NFTs desenvolvida especificamente para a Backfront Academy. Esta aplicação mobile oferece uma experiência de usuário excepcional, facilitando a compra, venda e gerenciamento de NFTs. Projetada para ser acessível e de fácil navegação, a plataforma permite aos usuários interagir eficientemente com uma comunidade vibrante de criadores e colecionadores de NFTs.
+O BF NFT Marketplace App é uma solução inovadora e intuitiva para o comércio de NFTs desenvolvida especificamente para a Backfront Academy. Esta aplicação mobile oferece uma experiência de usuário excepcional, facilitando a compra, venda e gerenciamento de NFTs. Projetada para ser acessível e de fácil navegação, a plataforma permite aos usuários interagir eficientemente com uma comunidade vibrante de criadores e colecionadores de NFTs.
 
 ## 📱 Layout do App:
    
