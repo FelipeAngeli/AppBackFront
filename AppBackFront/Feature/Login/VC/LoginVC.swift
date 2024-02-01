@@ -58,14 +58,17 @@ class LoginVC: UIViewController {
 
 extension LoginVC: LoginScreenProtocol {
     func tappedLoginButton() {
+
         
         auth?.signIn(withEmail: loginScreen?.emailTextField.text ?? "", password: loginScreen?.passwordTextField.text ?? "", completion: {user, error in
             if error != nil {
-                //deu ruim
                 print(error?.localizedDescription ?? "")
                 self.alert?.getAlert(title: "Falha no Login", message: error?.localizedDescription ?? "", completion: { print("botao presionado") })
             } else {
-                //nao tem error
+               // self.navigationController?.pushViewController(HomeVC(), animated: true)
+                let vc: TabBarVC = TabBarVC()
+                           vc.modalPresentationStyle = .fullScreen
+                           self.present(vc, animated: true)
                 print("Sucesso!")
             }
         } )
@@ -106,10 +109,6 @@ extension LoginVC: UITextFieldDelegate {
         validateTextField()
         
     }
-    
-    
-    
-    
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

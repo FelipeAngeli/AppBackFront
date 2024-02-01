@@ -17,7 +17,7 @@ protocol HomeServicesDelegate: GenericService {
 
 class HomeService: HomeServicesDelegate {
     func getHome(completion: @escaping completion<NFTData?>) {
-        let url: String = "https://run.mocky.io/v3/fb5f68b6-541e-43e2-ab19-196ed5809329"
+        let url: String = "https://run.mocky.io/v3/296b8aaa-85e5-424a-978b-65d77a3daed4"
         
         
         AF.request(url, method: .get).validate(statusCode: 200...299).responseDecodable(of: NFTData.self) { response in

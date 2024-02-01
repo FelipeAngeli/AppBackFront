@@ -9,8 +9,7 @@ import UIKit
 
 class HomeScreen: UIView {
     
-    
-    lazy var viewBackGound: UIView = {
+    lazy var viewBackGround: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1.0)
@@ -25,12 +24,12 @@ class HomeScreen: UIView {
     }()
     
     lazy var searchBar: UISearchBar = {
-        let serachBar = UISearchBar()
-        serachBar.translatesAutoresizingMaskIntoConstraints = false
-        serachBar.clipsToBounds = true
-        serachBar.layer.cornerRadius = 20
-        serachBar.placeholder = "Pesquise pelo nome:"
-        return serachBar
+        let searchBar = UISearchBar()
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.clipsToBounds = true
+        searchBar.layer.cornerRadius = 20
+        searchBar.placeholder = "Pesquise pelo nome:"
+        return searchBar
     }()
     
     lazy var collectionView: UICollectionView = {
@@ -51,37 +50,37 @@ class HomeScreen: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(NftTableViewCell.self, forCellReuseIdentifier: NftTableViewCell.identifier)
         tableView.backgroundColor = UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1.0)
-        tableView.separatorColor = .none
+        tableView.separatorStyle = .none
         return tableView
     }()
     
-    func configTableViewProtocols(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
+    
+    public func configTableViewProtocols(delegate: UITableViewDelegate, datasource: UITableViewDataSource) {
         tableView.delegate = delegate
-        tableView.dataSource = dataSource
+        tableView.dataSource = datasource
     }
     
-    func configCollectionViewProtocols(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource){
+    public func configCollectionViewViewProtocols(delegate: UICollectionViewDelegate, datasource: UICollectionViewDataSource) {
         collectionView.delegate = delegate
-        collectionView.dataSource = dataSource
+        collectionView.dataSource = datasource
     }
     
-    func configSearchbarDelegate(delegate: UISearchBarDelegate){
+    public func configSearchBarDelegate(delegate: UISearchBarDelegate) {
         searchBar.delegate = delegate
     }
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1.0)
         addViews()
-        configConstraints()
+        configCosntraints()
     }
     
-    func addViews() {
-        addSubview(viewBackGound)
-        viewBackGound.addSubview(logoImageView)
-        viewBackGound.addSubview(searchBar)
-        viewBackGound.addSubview(collectionView)
+    private func addViews() {
+        addSubview(viewBackGround)
+        viewBackGround.addSubview(logoImageView)
+        viewBackGround.addSubview(searchBar)
+        viewBackGround.addSubview(collectionView)
         addSubview(tableView)
     }
     
@@ -89,14 +88,14 @@ class HomeScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configConstraints() {
+    private func configCosntraints() {
         NSLayoutConstraint.activate([
-            viewBackGound.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            viewBackGound.leadingAnchor.constraint(equalTo: leadingAnchor),
-            viewBackGound.trailingAnchor.constraint(equalTo: trailingAnchor),
-            viewBackGound.heightAnchor.constraint(equalToConstant: 160),
+            viewBackGround.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            viewBackGround.leadingAnchor.constraint(equalTo: leadingAnchor),
+            viewBackGround.trailingAnchor.constraint(equalTo: trailingAnchor),
+            viewBackGround.heightAnchor.constraint(equalToConstant: 160),
             
-            logoImageView.topAnchor.constraint(equalTo: viewBackGound.topAnchor, constant: 5),
+            logoImageView.topAnchor.constraint(equalTo: viewBackGround.topAnchor, constant: 5),
             logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             logoImageView.heightAnchor.constraint(equalToConstant: 40),
             logoImageView.widthAnchor.constraint(equalToConstant: 40),
@@ -109,13 +108,12 @@ class HomeScreen: UIView {
             collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 15),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: viewBackGound.bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: viewBackGround.bottomAnchor),
             
-            tableView.topAnchor.constraint(equalTo: viewBackGound.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
         ])
     }
 }

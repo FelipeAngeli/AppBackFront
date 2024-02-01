@@ -78,7 +78,6 @@
 		552AAF5E29F99626000673ED /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		552AAF6229F9976D000673ED /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		552AAF6529F99B71000673ED /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		552AAF6729F99F2D000673ED /* Link Github.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Link Github.md"; sourceTree = "<group>"; };
 		554CF8A229F575B10011D88E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		557B2EA429F0BE6400190D3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		557D800A29F58078007FCB97 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -255,7 +254,6 @@
 				558C356929AE79AC00FE4009 /* SceneDelegate.swift */,
 				558C357029AE79AE00FE4009 /* Assets.xcassets */,
 				558C357229AE79AE00FE4009 /* LaunchScreen.storyboard */,
-				552AAF6729F99F2D000673ED /* Link Github.md */,
 				558C357529AE79AE00FE4009 /* Info.plist */,
 				557B2EA429F0BE6400190D3E /* GoogleService-Info.plist */,
 			);
